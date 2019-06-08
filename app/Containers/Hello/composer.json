@@ -1,0 +1,6 @@
+{
+  "name": "apiato/hello",
+  "description": "Hello Container for apiato.",
+  "require": {
+  }
+}

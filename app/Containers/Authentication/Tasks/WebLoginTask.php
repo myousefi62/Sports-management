@@ -27,7 +27,7 @@ class WebLoginTask extends Task
         if (!$user = Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
             throw new LoginFailedException();
         }
-
+      print_r(Auth::user());
         return Auth::user();
     }
 

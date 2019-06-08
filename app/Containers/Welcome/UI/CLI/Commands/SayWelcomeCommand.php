@@ -43,6 +43,9 @@ class SayWelcomeCommand extends ConsoleCommand
      */
     public function handle()
     {
-        echo "Welcome to apiato :)\n";
+        //echo "Welcome to apiato :)\n";
+      $name = $this->ask("Enter name");
+
+      echo trans('localization::messages.welcome')."\n";
     }
 }

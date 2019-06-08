@@ -14,7 +14,8 @@ return [
     */
 
     'supported_languages' => [
-        'ar',
+      'fa',
+      'ar',
         'en' => [
             'en-GB',
             'en-US',
