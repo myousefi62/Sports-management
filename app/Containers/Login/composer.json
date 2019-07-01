@@ -1,7 +1,0 @@
-{
-  "name": "apiato/login",
-  "description": "Login Container for apiato.",
-  "require": {
-    "lcobucci/jwt": "^3.3"
-  }
-}
