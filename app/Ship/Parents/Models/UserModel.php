@@ -7,8 +7,8 @@ use Apiato\Core\Traits\HashIdTrait;
 use Apiato\Core\Traits\HasResourceKeyTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Passport\HasApiTokens;
-use Spatie\Permission\Traits\HasRoles;
+//use Laravel\Passport\HasApiTokens;
+//use Spatie\Permission\Traits\HasRoles;
 
 /**
  * Class UserModel.

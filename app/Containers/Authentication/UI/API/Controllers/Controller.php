@@ -2,88 +2,107 @@
 
 namespace App\Containers\Authentication\UI\API\Controllers;
 
-use Apiato\Core\Foundation\Facades\Apiato;
-use App\Containers\Authentication\Data\Transporters\ProxyApiLoginTransporter;
-use App\Containers\Authentication\Data\Transporters\ProxyRefreshTransporter;
+//use App\Containers\Login\UI\API\Requests\LoginRequest;
+//use  App\Containers\Authentication\UI\API\Requests\LoginRequest;
 use App\Containers\Authentication\UI\API\Requests\LoginRequest;
-use App\Containers\Authentication\UI\API\Requests\LogoutRequest;
-use App\Containers\Authentication\UI\API\Requests\RefreshRequest;
-use App\Ship\Parents\Controllers\ApiController;
+use App\Containers\Authentication\UI\API\Requests\SigninRequest;
 use App\Ship\Transporters\DataTransporter;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Cookie;
+
+use App\Containers\Authentication\UI\API\Requests\CreateAuthenticationRequest;
+use App\Containers\Authentication\UI\API\Requests\DeleteAuthenticationRequest;
+use App\Containers\Authentication\UI\API\Requests\GetAllAuthenticationsRequest;
+use App\Containers\Authentication\UI\API\Requests\FindAuthenticationByIdRequest;
+use App\Containers\Authentication\UI\API\Requests\UpdateAuthenticationRequest;
+use App\Containers\Authentication\UI\API\Transformers\AuthenticationTransformer;
+use App\Ship\Parents\Controllers\ApiController;
+use Apiato\Core\Foundation\Facades\Apiato;
 
 /**
  * Class Controller
  *
- * @author  Mahmoud Zalt  <mahmoud@zalt.me>
+ * @package App\Containers\Authentication\UI\API\Controllers
  */
 class Controller extends ApiController
 {
+  /**
+   * @param LoginRequest $request
+   * @return \Illuminate\Http\JsonResponse
+   */
+  public function Signin(SigninRequest $request)
+  {
+    $login = Apiato::call('Authentication@SigninAction', [new DataTransporter($request)]);
+    //Return($login['id']);
+//      echo $login[0]->id;
+    //print_r($login[0]);
+    Return($this->json($login));
+    //return $this->created($this->transform($login, LoginTransformer::class));
+  }
 
-    /**
-     * @param \App\Containers\Authentication\UI\API\Requests\LogoutRequest $request
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function logout(LogoutRequest $request)
-    {
-        $dataTransporter = new DataTransporter($request);
-        $dataTransporter->bearerToken = $request->bearerToken();
-
-        Apiato::call('Authentication@ApiLogoutAction', [$dataTransporter]);
-
-        return $this->accepted([
-            'message' => 'Token revoked successfully.',
-        ])->withCookie(Cookie::forget('refreshToken'));
-    }
-
-    /**
-     * This `proxyLoginForAdminWebClient` exist only because we have `AdminWebClient`
-     * The more clients (Web Apps). Each client you add in the future, must have
-     * similar functions here, with custom route for dedicated for each client
-     * to be used as proxy when contacting the OAuth server.
-     * This is only to help the Web Apps (JavaScript clients) hide
-     * their ID's and Secrets when contacting the OAuth server and obtain Tokens.
-     *
-     * @param \App\Containers\Authentication\UI\API\Requests\LoginRequest $request
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function proxyLoginForAdminWebClient(LoginRequest $request)
-    {
-        $dataTransporter = new ProxyApiLoginTransporter(
-            array_merge($request->all(), [
-                'client_id'       => Config::get('authentication-container.clients.web.admin.id'),
-                'client_password' => Config::get('authentication-container.clients.web.admin.secret')
-            ])
-        );
-
-        $result = Apiato::call('Authentication@ProxyApiLoginAction', [$dataTransporter]);
-
-        return $this->json($result['response_content'])->withCookie($result['refresh_cookie']);
-    }
-
-    /**
-     * Read the comment in the function `proxyLoginForAdminWebClient`
-     *
-     * @param \App\Containers\Authentication\UI\API\Requests\RefreshRequest $request
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function proxyRefreshForAdminWebClient(RefreshRequest $request)
-    {
-        $dataTransporter = new ProxyRefreshTransporter(
-            array_merge($request->all(), [
-                'client_id'       => Config::get('authentication-container.clients.web.admin.id'),
-                'client_password' => Config::get('authentication-container.clients.web.admin.secret'),
-                // use the refresh token sent in request data, if not exist try to get it from the cookie
-                'refresh_token'   => $request->refresh_token ? : $request->cookie('refreshToken'),
-            ])
-        );
-
-        $result = Apiato::call('Authentication@ProxyApiRefreshAction', [$dataTransporter]);
-
-        return $this->json($result['response-content'])->withCookie($result['refresh-cookie']);
-    }
+  /**
+   * @param LoginRequest $request
+   * @return \Illuminate\Http\JsonResponse
+   */
+  public function Login(LoginRequest $request)
+  {
+    $login = Apiato::call('Login@LoginAction', [new DataTransporter($request)]);
+    //Return($login['id']);
+//      echo $login[0]->id;
+    //print_r($login[0]);
+    Return($this->json($login));
+    //return $this->created($this->transform($login, LoginTransformer::class));
+  }
+//    /**
+//     * @param CreateAuthenticationRequest $request
+//     * @return \Illuminate\Http\JsonResponse
+//     */
+//    public function createAuthentication(CreateAuthenticationRequest $request)
+//    {
+//        $authentication = Apiato::call('Authentication@CreateAuthenticationAction', [$request]);
+//
+//        return $this->created($this->transform($authentication, AuthenticationTransformer::class));
+//    }
+//
+//    /**
+//     * @param FindAuthenticationByIdRequest $request
+//     * @return array
+//     */
+//    public function findAuthenticationById(FindAuthenticationByIdRequest $request)
+//    {
+//        $authentication = Apiato::call('Authentication@FindAuthenticationByIdAction', [$request]);
+//
+//        return $this->transform($authentication, AuthenticationTransformer::class);
+//    }
+//
+//    /**
+//     * @param GetAllAuthenticationsRequest $request
+//     * @return array
+//     */
+//    public function getAllAuthentications(GetAllAuthenticationsRequest $request)
+//    {
+//        $authentications = Apiato::call('Authentication@GetAllAuthenticationsAction', [$request]);
+//
+//        return $this->transform($authentications, AuthenticationTransformer::class);
+//    }
+//
+//    /**
+//     * @param UpdateAuthenticationRequest $request
+//     * @return array
+//     */
+//    public function updateAuthentication(UpdateAuthenticationRequest $request)
+//    {
+//        $authentication = Apiato::call('Authentication@UpdateAuthenticationAction', [$request]);
+//
+//        return $this->transform($authentication, AuthenticationTransformer::class);
+//    }
+//
+//    /**
+//     * @param DeleteAuthenticationRequest $request
+//     * @return \Illuminate\Http\JsonResponse
+//     */
+//    public function deleteAuthentication(DeleteAuthenticationRequest $request)
+//    {
+//        Apiato::call('Authentication@DeleteAuthenticationAction', [$request]);
+//
+//        return $this->noContent();
+//    }
 }

@@ -2,22 +2,23 @@
 
 namespace App\Containers\User\Models;
 
-use App\Containers\Authorization\Traits\AuthorizationTrait;
-use App\Containers\Payment\Contracts\ChargeableInterface;
-use App\Containers\Payment\Models\PaymentAccount;
-use App\Containers\Payment\Traits\ChargeableTrait;
-use App\Ship\Parents\Models\UserModel;
+//use App\Containers\Authorization\Traits\AuthorizationTrait;
+//use App\Containers\Payment\Contracts\ChargeableInterface;
+//use App\Containers\Payment\Models\PaymentAccount;
+//use App\Containers\Payment\Traits\ChargeableTrait;
+use App\Ship\Parents\Models\Model;
+//use App\Ship\Parents\Models\UserModel;
 
 /**
  * Class User.
  *
  * @author Mahmoud Zalt <mahmoud@zalt.me>
  */
-class User extends UserModel implements ChargeableInterface
+class User extends Model//UserModel implements ChargeableInterface
 {
 
-    use ChargeableTrait;
-    use AuthorizationTrait;
+//    use ChargeableTrait;
+//    use AuthorizationTrait;
 
     /**
      * The database table used by the model.
@@ -50,6 +51,8 @@ class User extends UserModel implements ChargeableInterface
         'social_nickname',
         'confirmed',
         'is_client',
+        'api_token',
+        'phone_number',
     ];
 
     protected $casts = [
@@ -78,9 +81,9 @@ class User extends UserModel implements ChargeableInterface
         'remember_token',
     ];
 
-    public function paymentAccounts()
-    {
-        return $this->hasMany(PaymentAccount::class);
-    }
+//    public function paymentAccounts()
+//    {
+//        return $this->hasMany(PaymentAccount::class);
+//    }
 
 }

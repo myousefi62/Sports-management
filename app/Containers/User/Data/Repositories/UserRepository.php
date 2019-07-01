@@ -20,7 +20,9 @@ class UserRepository extends Repository
         'id'         => '=',
         'email'      => '=',
         'confirmed'  => '=',
+        'phone_number'=>'=',
         'created_at' => 'like',
+
     ];
 
 }

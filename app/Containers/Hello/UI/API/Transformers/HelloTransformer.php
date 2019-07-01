@@ -30,16 +30,15 @@ class HelloTransformer extends Transformer
     {
         $response = [
             'object' => 'Hello',
-            'id' => $entity->getHashedKey(),
-            'created_at' => $entity->created_at,
-            'updated_at' => $entity->updated_at,
+            'StatusID' => $entity->StatusID,
+            'FinalConfirmID' => $entity->FinalConfirmID,
 
         ];
 
-        $response = $this->ifAdmin([
-            'real_id'    => $entity->id,
-            // 'deleted_at' => $entity->deleted_at,
-        ], $response);
+//        $response = $this->ifAdmin([
+//            'real_id'    => $entity->id,
+//            // 'deleted_at' => $entity->deleted_at,
+//        ], $response);
 
         return $response;
     }

@@ -10,7 +10,7 @@ class SayHelloAction extends Action
 {
   public function run()
   {
-    return 'Hello World!';
+    return [trans('localization::messages.welcome')];
   }
 }
 

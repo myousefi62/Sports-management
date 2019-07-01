@@ -1,8 +1,7 @@
 {
   "name": "apiato/authentication",
-  "description": "apiato Container.",
-  "type": "apiato-container",
+  "description": "Authentication Container for apiato.",
   "require": {
-    "laravel/passport": "~7.3"
+    "lcobucci/jwt": "^3.3"
   }
 }

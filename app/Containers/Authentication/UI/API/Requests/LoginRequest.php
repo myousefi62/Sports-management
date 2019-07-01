@@ -6,11 +6,16 @@ use App\Ship\Parents\Requests\Request;
 
 /**
  * Class LoginRequest.
- *
- * @author Mahmoud Zalt <mahmoud@zalt.me>
  */
 class LoginRequest extends Request
 {
+
+    /**
+     * The assigned Transporter for this Request
+     *
+     * @var string
+     */
+    protected $transporter = \App\Containers\Authentication\Data\Transporters\LoginTransporter::class;
 
     /**
      * Define which Roles and/or Permissions has access to this request.
@@ -18,8 +23,8 @@ class LoginRequest extends Request
      * @var  array
      */
     protected $access = [
-        'permissions' => null,
-        'roles' => null,
+        'permissions' => '',
+        'roles'       => '',
     ];
 
     /**
@@ -28,59 +33,32 @@ class LoginRequest extends Request
      * @var  array
      */
     protected $decode = [
-
+        // 'id',
     ];
 
     /**
-     * Defining the URL parameters (`/stores/999/items`) allows applying
+     * Defining the URL parameters (e.g, `/user/{id}`) allows applying
      * validation rules on them and allows accessing them like request data.
      *
      * @var  array
      */
     protected $urlParameters = [
-
+        // 'id',
     ];
 
     /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
+     * @return  array
      */
     public function rules()
     {
-        $prefix = config('authentication-container.login.prefix', '');
-
-        $allowedLoginFields = config('authentication-container.login.allowed_login_attributes', ['email' => []]);
-
-        $rules = [
-            'password' => 'required|min:3|max:30',
+        return [
+            // 'id' => 'required',
+            // '{user-input}' => 'required|max:255',
         ];
-
-        foreach ($allowedLoginFields as $key => $optionalValidators)
-        {
-            // build all other login fields together
-            $allOtherLoginFields = array_except($allowedLoginFields, $key);
-            $allOtherLoginFields = array_keys($allOtherLoginFields);
-            $allOtherLoginFields = preg_filter('/^/', $prefix, $allOtherLoginFields);
-            $allOtherLoginFields = implode(',', $allOtherLoginFields);
-
-            $validators = implode('|', $optionalValidators);
-
-            $keyname = $prefix . $key;
-
-            $rules = array_merge($rules,
-                [
-                    $keyname => "required_without_all:{$allOtherLoginFields}|exists:users,{$key}|{$validators}",
-                ]);
-        }
-
-        return $rules;
     }
 
     /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
+     * @return  bool
      */
     public function authorize()
     {
