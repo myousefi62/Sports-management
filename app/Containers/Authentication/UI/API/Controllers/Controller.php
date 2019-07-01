@@ -37,7 +37,6 @@ class Controller extends ApiController
     Return($this->json($login));
     //return $this->created($this->transform($login, LoginTransformer::class));
   }
-
   /**
    * @param LoginRequest $request
    * @return \Illuminate\Http\JsonResponse

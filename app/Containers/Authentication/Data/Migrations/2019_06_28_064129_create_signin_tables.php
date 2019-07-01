@@ -23,7 +23,8 @@ class CreateSigninTables extends Migration
             $table->string('user_agent')->nullable()->comment('ایجنت ');
             $table->string('public_key')->nullable()->comment('کلید عمومی کاربر');
             $table->string('token_type')->nullable()->comment('نوع توکن موقت یا اصلی');
-            $table->string('device')->nullable();
+            $table->string('device')->nullable()->comment('عنوان دیوایس');
+            $table->timestamp('exp_date')->nullable()->comment('تاریخ انقضای توکن');
             $table->timestamps();
             $table->softDeletes();
 

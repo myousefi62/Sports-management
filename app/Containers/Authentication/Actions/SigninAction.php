@@ -44,7 +44,7 @@ class SigninAction extends Action
       $SigninData = array_filter($SigninData);
 
       $Signin = Apiato::call('Authentication@SigninTask',[$SigninData]);
-      return $Signin;
+      //return $Signin;
 
       $Token = $this->GetTmpToken($Signin->getHashedKey()); //Apiato::call('Login@GetTokenTask',[$Login->getHashedKey()]);
       $VerifyCode = mt_rand(10000, 99999);
