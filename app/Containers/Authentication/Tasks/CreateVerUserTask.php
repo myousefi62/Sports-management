@@ -2,24 +2,23 @@
 
 namespace App\Containers\Authentication\Tasks;
 
-use App\Containers\Authentication\Data\Repositories\SigninRepository;
+use App\Containers\Authentication\Data\Repositories\veruserRepository;
 use App\Ship\Exceptions\CreateResourceFailedException;
 use App\Ship\Parents\Tasks\Task;
 use Exception;
 
-class SigninTask extends Task
+class CreateVerUserTask extends Task
 {
 
     protected $repository;
 
-    public function __construct(SigninRepository $repository)
+    public function __construct(veruserRepository $repository)
     {
         $this->repository = $repository;
     }
 
     public function run(array $data)
     {
-      //print_r($data) ;
         try {
             return $this->repository->create($data);
         }

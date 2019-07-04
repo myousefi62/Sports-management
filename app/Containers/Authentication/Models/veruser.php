@@ -4,20 +4,16 @@ namespace App\Containers\Authentication\Models;
 
 use App\Ship\Parents\Models\Model;
 
-class Signin extends Model
+class veruser extends Model
 {
     protected $fillable = [
-      'user_id' ,
-      'is_active',
-      'ip',
+      'user_id',
+      'signin_id',
+      'phone_number',
+      'verify_code',
+      'status_id',
       'exp_date',
-      'uuid',
-      'mac_address',
-      'platform',
-      'user_agent',
-      'public_key',
-      'device',
-      'token_type'
+      'ip'
     ];
 
     protected $attributes = [
@@ -40,5 +36,5 @@ class Signin extends Model
     /**
      * A resource key to be used by the the JSON API Serializer responses.
      */
-    protected $resourceKey = 'signins';
+    protected $resourceKey = 'verusers';
 }

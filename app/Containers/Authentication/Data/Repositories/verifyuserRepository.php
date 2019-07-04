@@ -5,9 +5,9 @@ namespace App\Containers\Authentication\Data\Repositories;
 use App\Ship\Parents\Repositories\Repository;
 
 /**
- * Class SigninRepository
+ * Class verifyuserRepository
  */
-class SigninRepository extends Repository
+class verifyuserRepository extends Repository
 {
 
     /**
