@@ -19,6 +19,7 @@ return [
   |
   */
   'JWT_TMPSECRET'  => env('JWT_TMPSECRET', 'TpNxc9CxIhJ9IE5tz0fGMRNqiTjNmUqw'),
+  'JWT_REAL_SECRET'  => env('JWT_REAL_SECRET', 'TpNxc9CxIhJ9IE5tz0fGMRNqiTjNmUqw'),
   'JWT_SECRET'      => env('JWT_SECRET', 'TpNxc9CxIhJ9IE5tz0fGMRNqiTjNmUqw'),
   'JWT_EXP'  =>env('JWT_EXP', 120),
   'JWT_EXPTMP'  =>env('JWT_EXPTMP', 120),

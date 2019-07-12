@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aef2fe2ae35e4fb00a8cdc6390ddc9ce",
+    "content-hash": "eef7471ab86b519823d29b61b12a1f08",
     "packages": [
         {
             "name": "apiato/containers-installer",
@@ -273,188 +273,6 @@
                 "webprofiler"
             ],
             "time": "2019-03-25T09:39:08+00:00"
-        },
-        {
-            "name": "cartalyst/collections",
-            "version": "v1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cartalyst/collections.git",
-                "reference": "2b39755c52cb69e9ac4014891d857629f682da90"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/collections/zipball/2b39755c52cb69e9ac4014891d857629f682da90",
-                "reference": "2b39755c52cb69e9ac4014891d857629f682da90",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "~0.9",
-                "phpunit/phpunit": "~4.4"
-            },
-            "type": "library",
-            "extra": {
-                "component": "package",
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Cartalyst\\Collections\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com"
-                },
-                {
-                    "name": "Bruno Gaspar",
-                    "email": "bruno.gaspar@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Dan Syme",
-                    "email": "dan.syme@cartalyst.com",
-                    "role": "Project Lead"
-                },
-                {
-                    "name": "Suhayb Wardany",
-                    "email": "su.wardany@cartalyst.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Collection Abstaction library for PHP.",
-            "keywords": [
-                "cartalyst",
-                "collections",
-                "php"
-            ],
-            "time": "2015-03-06T21:10:35+00:00"
-        },
-        {
-            "name": "cartalyst/stripe",
-            "version": "v2.2.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cartalyst/stripe.git",
-                "reference": "03221b8b176a562a53d1e283bcab8af15faf725d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/stripe/zipball/03221b8b176a562a53d1e283bcab8af15faf725d",
-                "reference": "03221b8b176a562a53d1e283bcab8af15faf725d",
-                "shasum": ""
-            },
-            "require": {
-                "cartalyst/collections": "~1.0",
-                "guzzlehttp/guzzle": "~6.0",
-                "php": ">=5.5.9"
-            },
-            "require-dev": {
-                "mockery/mockery": "~0.9",
-                "phpunit/phpunit": "~4.8"
-            },
-            "type": "library",
-            "extra": {
-                "component": "package",
-                "branch-alias": {
-                    "dev-master": "2.2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Cartalyst\\Stripe\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com",
-                    "homepage": "https://cartalyst.com"
-                }
-            ],
-            "description": "A comprehensive Stripe API package.",
-            "keywords": [
-                "cartalyst",
-                "php",
-                "stripe"
-            ],
-            "time": "2019-06-30T01:15:14+00:00"
-        },
-        {
-            "name": "cartalyst/stripe-laravel",
-            "version": "v10.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cartalyst/stripe-laravel.git",
-                "reference": "52188fe02d12b5e7451f71bc485c036c19763a0b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/stripe-laravel/zipball/52188fe02d12b5e7451f71bc485c036c19763a0b",
-                "reference": "52188fe02d12b5e7451f71bc485c036c19763a0b",
-                "shasum": ""
-            },
-            "require": {
-                "cartalyst/stripe": "~2.0",
-                "illuminate/support": "5.8.*",
-                "php": ">=7.1.3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~7.0"
-            },
-            "type": "library",
-            "extra": {
-                "component": "implementation",
-                "branch-alias": {
-                    "dev-master": "10.0.x-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "Cartalyst\\Stripe\\Laravel\\StripeServiceProvider"
-                    ],
-                    "aliases": {
-                        "Stripe": "Cartalyst\\Stripe\\Laravel\\Facades\\Stripe"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Cartalyst\\Stripe\\Laravel\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com",
-                    "homepage": "https://cartalyst.com"
-                }
-            ],
-            "description": "Laravel 5.8 integration for the Cartalyst Stripe package.",
-            "keywords": [
-                "cartalyst",
-                "laravel",
-                "php",
-                "stripe"
-            ],
-            "time": "2019-03-02T02:39:49+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1739,28 +1557,26 @@
             "time": "2019-01-19T21:32:55+00:00"
         },
         {
-            "name": "johannesschobel/laravel-shoppingcart",
-            "version": "0.3.4",
+            "name": "kavenegar/laravel",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/johannesschobel/laravel-shoppingcart.git",
-                "reference": "ffa2a3530a5be1f793f5a783de30b31a8b7cab78"
+                "url": "https://github.com/KaveNegar/kavenegar-laravel.git",
+                "reference": "3554e1b456a8c3618817effe4ce5d399aa59d93c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannesschobel/laravel-shoppingcart/zipball/ffa2a3530a5be1f793f5a783de30b31a8b7cab78",
-                "reference": "ffa2a3530a5be1f793f5a783de30b31a8b7cab78",
+                "url": "https://api.github.com/repos/KaveNegar/kavenegar-laravel/zipball/3554e1b456a8c3618817effe4ce5d399aa59d93c",
+                "reference": "3554e1b456a8c3618817effe4ce5d399aa59d93c",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "^5.4",
-                "moneyphp/money": "^3.0",
-                "php": ">=7.0"
+                "kavenegar/php": "*"
             },
-            "type": "library",
+            "type": "laravel-package",
             "autoload": {
-                "psr-0": {
-                    "JohannesSchobel\\ShoppingCart": "src/"
+                "psr-4": {
+                    "Kavenegar\\Laravel\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1769,46 +1585,40 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schobel",
-                    "email": "johannes.schobel@googlemail.com"
+                    "name": "Kavenegar API Team",
+                    "email": "support@kavenegar.com"
                 }
             ],
-            "description": "A Shopping Cart Implementation for Laravel",
+            "description": "laravel 4 and 5 kavenegar integration",
             "keywords": [
-                "cart",
-                "e-commerce",
+                "api",
+                "kavenegar",
                 "laravel",
-                "shop",
-                "shopping cart"
+                "sms"
             ],
-            "time": "2018-01-03T16:58:21+00:00"
+            "time": "2017-03-03T07:23:20+00:00"
         },
         {
-            "name": "kevinem/wepay-laravel",
-            "version": "0.1.0",
+            "name": "kavenegar/php",
+            "version": "v1.2.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/kevinem/wepay-laravel.git",
-                "reference": "818ee797b59c0e9eb4e1ee7542ae1a8afb272c46"
+                "url": "https://github.com/kavenegar/kavenegar-php.git",
+                "reference": "884561b8d8c91b01f7db25284c2be9923c809412"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kevinem/wepay-laravel/zipball/818ee797b59c0e9eb4e1ee7542ae1a8afb272c46",
-                "reference": "818ee797b59c0e9eb4e1ee7542ae1a8afb272c46",
+                "url": "https://api.github.com/repos/kavenegar/kavenegar-php/zipball/884561b8d8c91b01f7db25284c2be9923c809412",
+                "reference": "884561b8d8c91b01f7db25284c2be9923c809412",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "^5.1",
-                "wepay/php-sdk": "^0.3"
-            },
-            "require-dev": {
-                "mockery/mockery": "^0.9.7",
-                "phpunit/phpunit": "^5.7"
+                "php": ">=5.4.0"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "KevinEm\\WePay\\Laravel\\": "src/"
+                    "Kavenegar\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1817,25 +1627,31 @@
             ],
             "authors": [
                 {
-                    "name": "Kevin Em",
-                    "email": "kevinem@deviseinteractive.com"
+                    "name": "Kavenegar API Team",
+                    "email": "support@kavenegar.com"
                 }
             ],
-            "description": "Laravel 5 wrapper for WePay",
-            "time": "2017-01-30T18:03:57+00:00"
+            "description": "A PHP wrapper for Kavenegar's API",
+            "homepage": "http://github.com/Kavenegar/kavenegar-php",
+            "keywords": [
+                "api",
+                "kavenegar",
+                "sms"
+            ],
+            "time": "2019-02-26T12:49:19+00:00"
         },
         {
             "name": "laravel/framework",
-            "version": "v5.8.26",
+            "version": "v5.8.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "1d8ec9afdedc79314c18715056b8143d7e1fac31"
+                "reference": "f1dccffb96f614895393e27e4667105a05407af5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/1d8ec9afdedc79314c18715056b8143d7e1fac31",
-                "reference": "1d8ec9afdedc79314c18715056b8143d7e1fac31",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/f1dccffb96f614895393e27e4667105a05407af5",
+                "reference": "f1dccffb96f614895393e27e4667105a05407af5",
                 "shasum": ""
             },
             "require": {
@@ -1969,71 +1785,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-06-25T16:20:51+00:00"
-        },
-        {
-            "name": "laravel/socialite",
-            "version": "v4.1.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/socialite.git",
-                "reference": "f92e15a8ba4dfd730cddc775a7c1ca2251f30cff"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/socialite/zipball/f92e15a8ba4dfd730cddc775a7c1ca2251f30cff",
-                "reference": "f92e15a8ba4dfd730cddc775a7c1ca2251f30cff",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "guzzlehttp/guzzle": "~6.0",
-                "illuminate/http": "~5.7.0|~5.8.0|~5.9.0",
-                "illuminate/support": "~5.7.0|~5.8.0|~5.9.0",
-                "league/oauth1-client": "~1.0",
-                "php": "^7.1.3"
-            },
-            "require-dev": {
-                "illuminate/contracts": "~5.7.0|~5.8.0|~5.9.0",
-                "mockery/mockery": "~1.0",
-                "phpunit/phpunit": "~7.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.0-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "Laravel\\Socialite\\SocialiteServiceProvider"
-                    ],
-                    "aliases": {
-                        "Socialite": "Laravel\\Socialite\\Facades\\Socialite"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Laravel\\Socialite\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylor@laravel.com"
-                }
-            ],
-            "description": "Laravel wrapper around OAuth 1 & OAuth 2 libraries.",
-            "homepage": "https://laravel.com",
-            "keywords": [
-                "laravel",
-                "oauth"
-            ],
-            "time": "2019-04-02T17:06:04+00:00"
+            "time": "2019-07-02T13:43:47+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2302,69 +2054,6 @@
             "time": "2019-05-10T02:16:43+00:00"
         },
         {
-            "name": "league/oauth1-client",
-            "version": "1.7.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thephpleague/oauth1-client.git",
-                "reference": "fca5f160650cb74d23fc11aa570dd61f86dcf647"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth1-client/zipball/fca5f160650cb74d23fc11aa570dd61f86dcf647",
-                "reference": "fca5f160650cb74d23fc11aa570dd61f86dcf647",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "^6.0",
-                "php": ">=5.5.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "^0.9",
-                "phpunit/phpunit": "^4.0",
-                "squizlabs/php_codesniffer": "^2.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "League\\OAuth1\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ben Corlett",
-                    "email": "bencorlett@me.com",
-                    "homepage": "http://www.webcomm.com.au",
-                    "role": "Developer"
-                }
-            ],
-            "description": "OAuth 1.0 Client Library",
-            "keywords": [
-                "Authentication",
-                "SSO",
-                "authorization",
-                "bitbucket",
-                "identity",
-                "idp",
-                "oauth",
-                "oauth1",
-                "single sign on",
-                "trello",
-                "tumblr",
-                "twitter"
-            ],
-            "time": "2016-08-17T00:36:58+00:00"
-        },
-        {
             "name": "maximebf/debugbar",
             "version": "v1.15.0",
             "source": {
@@ -2476,88 +2165,6 @@
                 "php mobile detect"
             ],
             "time": "2018-09-01T15:05:15+00:00"
-        },
-        {
-            "name": "moneyphp/money",
-            "version": "v3.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/moneyphp/money.git",
-                "reference": "f6085de6c565e98d2f9a7311a605987b54e06d5e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/moneyphp/money/zipball/f6085de6c565e98d2f9a7311a605987b54e06d5e",
-                "reference": "f6085de6c565e98d2f9a7311a605987b54e06d5e",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": ">=5.6"
-            },
-            "require-dev": {
-                "cache/taggable-cache": "^0.4.0",
-                "doctrine/instantiator": "^1.0.5",
-                "ext-bcmath": "*",
-                "ext-gmp": "*",
-                "ext-intl": "*",
-                "florianv/exchanger": "^1.0",
-                "florianv/swap": "^3.0",
-                "leanphp/phpspec-code-coverage": "^3.0 || ^4.0",
-                "moneyphp/iso-currencies": "^3.0",
-                "php-http/message": "^1.4",
-                "php-http/mock-client": "^1.0.0",
-                "phpspec/phpspec": "^3.0",
-                "phpunit/phpunit": "^5.7 || ^6.4 || ^7.0",
-                "psr/cache": "^1.0",
-                "symfony/phpunit-bridge": "^4"
-            },
-            "suggest": {
-                "ext-bcmath": "Calculate without integer limits",
-                "ext-gmp": "Calculate without integer limits",
-                "ext-intl": "Format Money objects with intl",
-                "florianv/exchanger": "Exchange rates library for PHP",
-                "florianv/swap": "Exchange rates library for PHP",
-                "psr/cache-implementation": "Used for Currency caching"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Money\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Márk Sági-Kazár",
-                    "email": "mark.sagikazar@gmail.com"
-                },
-                {
-                    "name": "Mathias Verraes",
-                    "email": "mathias@verraes.net",
-                    "homepage": "http://verraes.net"
-                },
-                {
-                    "name": "Frederik Bosch",
-                    "email": "f.bosch@genkgo.nl"
-                }
-            ],
-            "description": "PHP implementation of Fowler's Money pattern",
-            "homepage": "http://moneyphp.org",
-            "keywords": [
-                "Value Object",
-                "money",
-                "vo"
-            ],
-            "time": "2019-02-07T18:01:35+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -5151,53 +4758,6 @@
             "time": "2019-06-15T22:40:20+00:00"
         },
         {
-            "name": "wepay/php-sdk",
-            "version": "0.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wepay/PHP-SDK.git",
-                "reference": "2a89ceb2954d117d082f869d3bfcb7864e6c2a7d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wepay/PHP-SDK/zipball/2a89ceb2954d117d082f869d3bfcb7864e6c2a7d",
-                "reference": "2a89ceb2954d117d082f869d3bfcb7864e6c2a7d",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.2.x-dev"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "wepay.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "WePay",
-                    "email": "api@wepay.com"
-                }
-            ],
-            "description": "WePay APIv2 SDK for PHP",
-            "keywords": [
-                "payment",
-                "sdk",
-                "wepay"
-            ],
-            "time": "2017-01-21T07:03:26+00:00"
-        },
-        {
             "name": "wikimedia/composer-merge-plugin",
             "version": "v1.4.1",
             "source": {
@@ -5731,16 +5291,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.4.0",
+            "version": "2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "1a1a1044ad00e285bd2825fac4c3a0443d90ad33"
+                "reference": "6fb502c23885701a991b0bba974b1a8eb6673577"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/1a1a1044ad00e285bd2825fac4c3a0443d90ad33",
-                "reference": "1a1a1044ad00e285bd2825fac4c3a0443d90ad33",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/6fb502c23885701a991b0bba974b1a8eb6673577",
+                "reference": "6fb502c23885701a991b0bba974b1a8eb6673577",
                 "shasum": ""
             },
             "require": {
@@ -5788,7 +5348,7 @@
                 "throwable",
                 "whoops"
             ],
-            "time": "2019-06-23T09:00:00+00:00"
+            "time": "2019-07-04T09:00:00+00:00"
         },
         {
             "name": "fzaninotto/faker",
@@ -6383,40 +5943,40 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "6.1.4",
+            "version": "7.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "807e6013b00af69b6c5d9ceb4282d0393dbb9d8d"
+                "reference": "aed67b57d459dcab93e84a5c9703d3deb5025dff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/807e6013b00af69b6c5d9ceb4282d0393dbb9d8d",
-                "reference": "807e6013b00af69b6c5d9ceb4282d0393dbb9d8d",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/aed67b57d459dcab93e84a5c9703d3deb5025dff",
+                "reference": "aed67b57d459dcab93e84a5c9703d3deb5025dff",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-xmlwriter": "*",
-                "php": "^7.1",
-                "phpunit/php-file-iterator": "^2.0",
+                "php": "^7.2",
+                "phpunit/php-file-iterator": "^2.0.2",
                 "phpunit/php-text-template": "^1.2.1",
-                "phpunit/php-token-stream": "^3.0",
+                "phpunit/php-token-stream": "^3.0.1",
                 "sebastian/code-unit-reverse-lookup": "^1.0.1",
-                "sebastian/environment": "^3.1 || ^4.0",
+                "sebastian/environment": "^4.1",
                 "sebastian/version": "^2.0.1",
                 "theseer/tokenizer": "^1.1"
             },
             "require-dev": {
-                "phpunit/phpunit": "^7.0"
+                "phpunit/phpunit": "^8.0"
             },
             "suggest": {
-                "ext-xdebug": "^2.6.0"
+                "ext-xdebug": "^2.6.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.1-dev"
+                    "dev-master": "7.0-dev"
                 }
             },
             "autoload": {
@@ -6442,7 +6002,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-10-31T16:06:48+00:00"
+            "time": "2019-06-06T12:28:18+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -6635,45 +6195,44 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.5.13",
+            "version": "8.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "b9278591caa8630127f96c63b598712b699e671c"
+                "reference": "25fe0b5031b24722f66a75ad479a074cccc1bb37"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b9278591caa8630127f96c63b598712b699e671c",
-                "reference": "b9278591caa8630127f96c63b598712b699e671c",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/25fe0b5031b24722f66a75ad479a074cccc1bb37",
+                "reference": "25fe0b5031b24722f66a75ad479a074cccc1bb37",
                 "shasum": ""
             },
             "require": {
-                "doctrine/instantiator": "^1.1",
+                "doctrine/instantiator": "^1.2.0",
                 "ext-dom": "*",
                 "ext-json": "*",
                 "ext-libxml": "*",
                 "ext-mbstring": "*",
                 "ext-xml": "*",
-                "myclabs/deep-copy": "^1.7",
-                "phar-io/manifest": "^1.0.2",
-                "phar-io/version": "^2.0",
-                "php": "^7.1",
-                "phpspec/prophecy": "^1.7",
-                "phpunit/php-code-coverage": "^6.0.7",
-                "phpunit/php-file-iterator": "^2.0.1",
+                "ext-xmlwriter": "*",
+                "myclabs/deep-copy": "^1.9.1",
+                "phar-io/manifest": "^1.0.3",
+                "phar-io/version": "^2.0.1",
+                "php": "^7.2",
+                "phpspec/prophecy": "^1.8.1",
+                "phpunit/php-code-coverage": "^7.0.5",
+                "phpunit/php-file-iterator": "^2.0.2",
                 "phpunit/php-text-template": "^1.2.1",
-                "phpunit/php-timer": "^2.1",
-                "sebastian/comparator": "^3.0",
-                "sebastian/diff": "^3.0",
-                "sebastian/environment": "^4.0",
-                "sebastian/exporter": "^3.1",
-                "sebastian/global-state": "^2.0",
+                "phpunit/php-timer": "^2.1.2",
+                "sebastian/comparator": "^3.0.2",
+                "sebastian/diff": "^3.0.2",
+                "sebastian/environment": "^4.2.2",
+                "sebastian/exporter": "^3.1.0",
+                "sebastian/global-state": "^3.0.0",
                 "sebastian/object-enumerator": "^3.0.3",
-                "sebastian/resource-operations": "^2.0",
+                "sebastian/resource-operations": "^2.0.1",
+                "sebastian/type": "^1.1.3",
                 "sebastian/version": "^2.0.1"
-            },
-            "conflict": {
-                "phpunit/phpunit-mock-objects": "*"
             },
             "require-dev": {
                 "ext-pdo": "*"
@@ -6681,7 +6240,7 @@
             "suggest": {
                 "ext-soap": "*",
                 "ext-xdebug": "*",
-                "phpunit/php-invoker": "^2.0"
+                "phpunit/php-invoker": "^2.0.0"
             },
             "bin": [
                 "phpunit"
@@ -6689,7 +6248,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "7.5-dev"
+                    "dev-master": "8.2-dev"
                 }
             },
             "autoload": {
@@ -6715,7 +6274,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-06-19T12:01:51+00:00"
+            "time": "2019-07-03T08:30:33+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -7004,23 +6563,26 @@
         },
         {
             "name": "sebastian/global-state",
-            "version": "2.0.0",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/global-state.git",
-                "reference": "e8ba02eed7bbbb9e59e43dedd3dddeff4a56b0c4"
+                "reference": "edf8a461cf1d4005f19fb0b6b8b95a9f7fa0adc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/e8ba02eed7bbbb9e59e43dedd3dddeff4a56b0c4",
-                "reference": "e8ba02eed7bbbb9e59e43dedd3dddeff4a56b0c4",
+                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/edf8a461cf1d4005f19fb0b6b8b95a9f7fa0adc4",
+                "reference": "edf8a461cf1d4005f19fb0b6b8b95a9f7fa0adc4",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.0"
+                "php": "^7.2",
+                "sebastian/object-reflector": "^1.1.1",
+                "sebastian/recursion-context": "^3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.0"
+                "ext-dom": "*",
+                "phpunit/phpunit": "^8.0"
             },
             "suggest": {
                 "ext-uopz": "*"
@@ -7028,7 +6590,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0-dev"
+                    "dev-master": "3.0-dev"
                 }
             },
             "autoload": {
@@ -7051,7 +6613,7 @@
             "keywords": [
                 "global state"
             ],
-            "time": "2017-04-27T15:39:26+00:00"
+            "time": "2019-02-01T05:30:01+00:00"
         },
         {
             "name": "sebastian/object-enumerator",
@@ -7239,6 +6801,52 @@
             "description": "Provides a list of PHP built-in functions that operate on resources",
             "homepage": "https://www.github.com/sebastianbergmann/resource-operations",
             "time": "2018-10-04T04:07:39+00:00"
+        },
+        {
+            "name": "sebastian/type",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/type.git",
+                "reference": "3aaaa15fa71d27650d62a948be022fe3b48541a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/type/zipball/3aaaa15fa71d27650d62a948be022fe3b48541a3",
+                "reference": "3aaaa15fa71d27650d62a948be022fe3b48541a3",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Collection of value objects that represent the types of the PHP type system",
+            "homepage": "https://github.com/sebastianbergmann/type",
+            "time": "2019-07-02T08:10:15+00:00"
         },
         {
             "name": "sebastian/version",

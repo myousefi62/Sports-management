@@ -1,0 +1,7 @@
+{
+  "name": "apiato/notification",
+  "description": "Notification Container for apiato.",
+  "require": {
+    "kavenegar/laravel":"v1.0.1"
+  }
+}

@@ -11,8 +11,9 @@ use App\Containers\Authentication\Traits\JwtTrait;
 use App\Containers\Authentication\Models\Signin;
 use App\Ship\Parents\Requests\Request;
 use App\Ship\Transporters\DataTransporter;
-use Cartalyst\Stripe\Api\Api;
+//use Cartalyst\Stripe\Api\Api;
 //use Apiato\Core\Traits;
+use Kavenegar;
 
 use Illuminate\Support\Facades\Config;
 
@@ -50,29 +51,54 @@ class SigninAction extends Action
       // ایجاد توکن در بازه زمانی اعتبار توکن
       $Token = $this->GetTmpToken($Signin->getHashedKey()); //Apiato::call('Login@GetTokenTask',[$Login->getHashedKey()]);
       $VerifyCode = mt_rand(10000, 99999);
+
+
       // ثبت اطلاعات درخواست جهت تایدد ورود
-//      'user_id',
-//      'signin_id',
-//      'phone_number',
-//      'verify_code',
-//      'status_id',
-//      'exp_date',
-//      'ip'
       $VerifyUSerData = [
         'user_id'       => $user->id,
-//        'signin_id'   =>$Signin->id,
-//        'phone_number'=>$request-> phone_number,
-//        'verify_code' =>$VerifyCode,
-//        'status_id'   =>1,
-//        'exp_date'    =>$exp_date,
-//        'ip'          =>'255.255.255.255'
+        'signin_id'   =>$Signin->id,
+        'phone_number'=>$request-> phone_number,
+        'verify_code' =>$VerifyCode,
+        'status_id'   =>1,
+        'exp_date'    =>$exp_date,
+        'ip'          =>'255.255.255.255'
       ];
       $VerifyUSerData = array_filter($VerifyUSerData);
-//      return $VerifyUSerData;
-      $VerifyUSer = Apiato::call('Authentication@CreateVerifyUserTask',[$VerifyUSerData ]);
-      //return $VerifyUSer;
+      Apiato::call('Authentication@VerifyUserTask', [$VerifyUSerData]);
+///ارسال پیامک تایید هویت
+      $en_num = array('0','1','2','3','4','5','6','7','8','9');
+      $fa_num = array('۰','۱','۲','۳','۴','۵','۶','۷','۸','۹');
+      $VerifyCode = str_replace($en_num, $fa_num, $VerifyCode);
+      try{
+        $sender = "100065995";
+        $message = $VerifyCode;
+        $receptor = $request-> phone_number;
+        $result = Kavenegar::Send($sender,$receptor,$message);
+        //print_r($result);
+        // خورجی درخواست که یک توکن می باشد
+        return array_filter(["Token" =>  $Token,"VerifyCode " => $VerifyCode  ,"result"=>$result ]);
+//        if($result){
+//          foreach($result as $r){
+//            echo "messageid = $r->messageid";
+//            echo "message = $r->message";
+//            echo "status = $r->status";
+//            echo "statustext = $r->statustext";
+//            echo "sender = $r->sender";
+//            echo "receptor = $r->receptor";
+//            echo "date = $r->date";
+//            echo "cost = $r->cost";
+//          }
+//        }
+      }
+      catch(\Kavenegar\Exceptions\ApiException $e){
+        // در صورتی که خروجی وب سرویس 200 نباشد این خطا رخ می دهد
+        echo $e->errorMessage();
+      }
+      catch(\Kavenegar\Exceptions\HttpException $e){
+        // در زمانی که مشکلی در برقرای ارتباط با وب سرویس وجود داشته باشد این خطا رخ می دهد
+        echo $e->errorMessage();
+      }
       // خورجی درخواست که یک توکن می باشد
       return array_filter(["Token" =>  $Token,"VerifyCode " => $VerifyCode   ]);
-      // $var = Apiato::call('Container@Task', [$arg1, $arg2, ...]);
     }
 }

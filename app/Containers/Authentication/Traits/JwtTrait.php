@@ -2,19 +2,10 @@
 
 namespace App\Containers\Authentication\Traits;
 
-use DateTime;
 use Illuminate\Support\Facades\Config;
-
-use App\Containers\Login\Data\Repositories\LoginRepository;
-use App\Ship\Parents\Tasks\Task;
 use Lcobucci\JWT\Builder;
 use Lcobucci\JWT\Signer\Key;
-//use Lcobucci\JWT\Signer\Keychain; // just to make our life simpler
 use Lcobucci\JWT\Signer\Hmac\Sha256;
-//use PhpParser\Node\Stmt\Return_;
-
-
-//use Lcobucci\JWT\Signer\Rsa\Sha256;
 
 /**
  * Class JwtTrait
@@ -49,6 +40,38 @@ trait JwtTrait
     $iat= $time;
     $jti= $id;
     $JWT_SECRET= Config::get('Jwt-container.JWT_TMPSECRET');
+
+    $token = (new Builder())
+      ->relatedTo($sub,true)// Configures the subject that the token was subject (sub claim)
+      ->issuedBy($iss,true) // Configures the issuer (iss claim)
+      ->permittedFor($aud,true) // Configures the audience (aud claim)
+      ->identifiedBy($jti, true) // Configures the id (jti claim), replicating as a header item
+      ->withClaim('Type', 'tmp') // Configures a new claim, called "uid"
+      ->issuedAt($iat,true) // Configures the time that the token was issue (iat claim)
+      ->canOnlyBeUsedAfter($nbf,true) // Configures the time that the token can be used (nbf claim)
+      ->expiresAt($exp,true) // Configures the expiration time of the token (exp claim)
+      ->getToken($signer,new Key($JWT_SECRET) ); // Retrieves the generated token//new Key('fslhggi26315592@*')
+
+    Return  $token;
+  }
+  public function GetRealToken($id):string
+  {
+
+    $signer = new Sha256();
+    $time = time();
+
+    //    Return  Config::get('Jwt-container.secret');
+    //    Return  Config('Jwt-container.secret');
+    //    $iss = \config('Jwt-container.JWT_ISS');
+
+    $iss = Config::get('Jwt-container.JWT_ISS');
+    $sub= Config::get('Jwt-container.JWT_SUB');
+    $aud= Config::get('Jwt-container.JWT_AUD');
+    $exp= Config::get('Jwt-container.JWT_EXPTMP')+$time;
+    $nbf= Config::get('Jwt-container.JWT_NBF')+$time;
+    $iat= $time;
+    $jti= $id;
+    $JWT_SECRET= Config::get('Jwt-container.JWT_REAL_SECRET');
 
     $token = (new Builder())
       ->relatedTo($sub,true)// Configures the subject that the token was subject (sub claim)
